@@ -1,4 +1,4 @@
-export default function RadioButtons() {
+export default function RadioButtons({ handleChange, formData }) {
     return (
         <ul>
             <li>
@@ -6,7 +6,9 @@ export default function RadioButtons() {
                 id="color-one" 
                 type="radio" 
                 name="color" 
-                value="1"/>
+                onChange={handleChange}
+                value="1"
+                checked={formData.color === "1"}/>
                 <label htmlFor="color-one">1</label>
             </li>
             <li>
@@ -14,7 +16,9 @@ export default function RadioButtons() {
                 id="color-two" 
                 type="radio" 
                 name="color" 
-                value="2"/>
+                onChange={handleChange}
+                value="2"
+                checked={formData.color === "2"}/>
                 <label htmlFor="color-two">2</label
                 >
             </li>
@@ -23,7 +27,9 @@ export default function RadioButtons() {
                 id="color-three" 
                 type="radio" 
                 name="color" 
-                value="3"/>
+                onChange={handleChange}
+                value="3"
+                checked={formData.color === "3"}/>
                 <label htmlFor="color-three">3</label>
             </li>
             <li>
@@ -31,7 +37,9 @@ export default function RadioButtons() {
                 id="color-four" 
                 type="radio" 
                 name="color" 
-                value="4"/>
+                onChange={handleChange}
+                value="4"
+                checked={formData.color === "4"}/>
                 <label htmlFor="color-four">4</label>
             </li>
         </ul>
