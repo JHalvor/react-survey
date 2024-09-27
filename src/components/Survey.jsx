@@ -9,8 +9,8 @@ export default function Survey() {
 
   const submitForm = (form) => {
     setAnswersList(() => [ ...answersList, { 
-      colour: form.color, 
-      timeSpent: form["spend-time"], 
+      color: form.color, 
+      timeSpent: form.timeSpent, 
       review: form.review, 
       username: form.username }])
   }

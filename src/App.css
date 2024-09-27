@@ -16,7 +16,7 @@ img {
 
 /* Globals */
 :root {
-  --primary-colour: #363aeb;
+  --primary-color: #363aeb;
   --background: #00a851;
   --background-two: whitesmoke;
   --survey-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -44,7 +44,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  color: var(--primary-colour);
+  color: var(--primary-color);
 }
 
 .survey {
@@ -77,6 +77,10 @@ h2 {
   margin: 1rem 0;
   border: 1px solid grey;
   background-color: white;
+}
+
+.answer .edit_answer_button {
+  float: right;
 }
 
 .answer p {
@@ -163,7 +167,7 @@ h2 {
 }
 
 .form__group.radio input[type="radio"]:checked + label {
-  background-color: var(--primary-colour);
+  background-color: var(--primary-color);
   color: var(--background-two);
 }
 

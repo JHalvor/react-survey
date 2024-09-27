@@ -4,14 +4,15 @@ import Checkboxes from "./Checkboxes";
 import RadioButtons from "./RadioButtons";
 
 export default function Form({ submitForm }) {
+    
     const initialState = {
         color: "",
-        "spend-time": [],
+        timeSpent: [],
         review: "",
         username: "",
         email: ""
     };
-
+    
     const [formData, setFormData] = useState(initialState)
 
     const handleChange = (event) => {
@@ -39,7 +40,7 @@ export default function Form({ submitForm }) {
     <form className="form" onSubmit={handleSubmit}>
         <h2>Tell us what you think about your rubber duck!</h2>
         <div className="form__group radio">
-            <h3>How do you rate your rubber duck colour?</h3>
+            <h3>How do you rate your rubber duck color?</h3>
             <RadioButtons handleChange={handleChange} formData={formData}/>
         </div>
         <div className="form__group">
