@@ -3,23 +3,18 @@ import { useState } from "react";
 import Checkboxes from "./Checkboxes";
 import RadioButtons from "./RadioButtons";
 
-export default function Form({ submitForm, mutableForm }) {
+export default function Form({ submitForm }) {
     
     const initialState = {
-        id: 0,
         color: "",
-        "spend-time": [],
+        timeSpent: [],
         review: "",
         username: "",
         email: ""
     };
-    console.log("in form: - mutableForm is: ", typeof(mutableForm)==="undefined")
     
     const [formData, setFormData] = useState(initialState)
-    if (typeof(mutableForm)!=="undefined" && mutableForm != formData.id) {
-        setFormData({ ...initialState, id: mutableForm.id, color: mutableForm.colour, ["spend-time"]: mutableForm.timeSpent, review: mutableForm.review, username: mutableForm.username })
-    }
-    console.log("in form: - formData is: ", formData)
+
     const handleChange = (event) => {
         const { name, value } = event.target
         if (Array.isArray(formData[name])) {
@@ -45,7 +40,7 @@ export default function Form({ submitForm, mutableForm }) {
     <form className="form" onSubmit={handleSubmit}>
         <h2>Tell us what you think about your rubber duck!</h2>
         <div className="form__group radio">
-            <h3>How do you rate your rubber duck colour?</h3>
+            <h3>How do you rate your rubber duck color?</h3>
             <RadioButtons handleChange={handleChange} formData={formData}/>
         </div>
         <div className="form__group">
