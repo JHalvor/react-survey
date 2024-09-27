@@ -3,17 +3,23 @@ import { useState } from "react";
 import Checkboxes from "./Checkboxes";
 import RadioButtons from "./RadioButtons";
 
-export default function Form({ submitForm }) {
+export default function Form({ submitForm, mutableForm }) {
+    
     const initialState = {
+        id: 0,
         color: "",
         "spend-time": [],
         review: "",
         username: "",
         email: ""
     };
-
+    console.log("in form: - mutableForm is: ", typeof(mutableForm)==="undefined")
+    
     const [formData, setFormData] = useState(initialState)
-
+    if (typeof(mutableForm)!=="undefined" && mutableForm != formData.id) {
+        setFormData({ ...initialState, id: mutableForm.id, color: mutableForm.colour, ["spend-time"]: mutableForm.timeSpent, review: mutableForm.review, username: mutableForm.username })
+    }
+    console.log("in form: - formData is: ", formData)
     const handleChange = (event) => {
         const { name, value } = event.target
         if (Array.isArray(formData[name])) {

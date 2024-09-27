@@ -79,6 +79,10 @@ h2 {
   background-color: white;
 }
 
+.answer .edit_answer_button {
+  float: right;
+}
+
 .answer p {
   margin: 1rem 0;
 }
